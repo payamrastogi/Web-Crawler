@@ -18,3 +18,4 @@
  - urlparse
     * http://stackoverflow.com/questions/9626535/get-domain-name-from-url   
     * https://docs.python.org/2/library/urlparse.html
+  - Unicode strings to regular strings - http://stackoverflow.com/questions/4855645/how-to-turn-unicode-strings-into-regular-strings
