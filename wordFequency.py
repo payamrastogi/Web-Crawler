@@ -1,4 +1,5 @@
 import re
 import collections
-words = re.findall('\w+', open('./test.txt').read().lower())
-print collections.Counter(words)
+words = re.findall('\w+', "This is new line".lower())
+c = collections.Counter(words)
+print c["this"]

@@ -4,7 +4,7 @@ import json
 import argparse
 
 search_url = "http://ajax.googleapis.com/ajax/services/search/web"
-class Search(object):
+class Searcher(object):
 
     def __init__(self, query, log_level):
         self.query = query;
@@ -15,7 +15,7 @@ class Search(object):
         self.__setup_logging(log_level)
 
     def __setup_logging(self, level):
-        logger = logging.getLogger("Search")
+        logger = logging.getLogger("Searcher")
         hdlr = logging.FileHandler("./log/webcrawler.log")
         formatter = logging.Formatter("%(asctime)-15s %(levelname)s  %(module)s.%(funcName)s(): %(message)s")
         hdlr.setFormatter(formatter)
@@ -61,7 +61,7 @@ def main():
     if not query:
         parser.print_help()
         exit()
-    s = Search(query, log_level=log_level)
+    s = Searcher(query, log_level=log_level)
     s.search()
 
 if __name__ == "__main__":

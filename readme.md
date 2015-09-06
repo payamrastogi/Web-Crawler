@@ -2,7 +2,7 @@
  - robotparser - https://docs.python.org/2/library/robotparser.html
  - urlib2 - https://docs.python.org/2/library/urllib2.html
  - HTMLParser - https://docs.python.org/2/library/htmlparser.html
- - Google Web Search api - http://ajax.googleapis.com/ajax/services/search/web?q=dog&v=3.0&rsz=8&start=0
+ - Google Web Search api (deprecated) - http://ajax.googleapis.com/ajax/services/search/web?q=dog&v=3.0&rsz=8&start=0
  - pygoogle - http://pygoogle.googlecode.com/svn/trunk/pygoogle.py
  - Threading - http://www.tutorialspoint.com/python/python_multithreading.htm
  - TF-IDF (see example) - https://en.wikipedia.org/wiki/Tf%E2%80%93idf
@@ -15,3 +15,6 @@
     * http://stackoverflow.com/questions/960733/python-creating-a-dictionary-of-lists
     * https://docs.python.org/2/library/collections.html
  - requests - http://docs.python-requests.org/en/latest/user/quickstart/
+ - urlparse
+    * http://stackoverflow.com/questions/9626535/get-domain-name-from-url   
+    * https://docs.python.org/2/library/urlparse.html
