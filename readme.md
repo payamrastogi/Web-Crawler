@@ -1,3 +1,12 @@
+#### To-Do
+- create posting list
+- implement multi-threading
+- implement priority queue based scores dict
+- test CosineScorer
+- implement hashing logic for documents
+- implement file writer
+- dict to maintain filename, hash-value, path
+
 #### components
  - robotparser - https://docs.python.org/2/library/robotparser.html
  - urlib2 - https://docs.python.org/2/library/urllib2.html

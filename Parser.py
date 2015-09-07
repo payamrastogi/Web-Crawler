@@ -39,7 +39,7 @@ class Parser(object):
         links = []
         soup = BeautifulSoup(text)
         for tag in soup.findAll('a', href=True):
-            tag['href'] = urlparse.urljoin(self.url, tag['href'])
+            tag['href'] = urlparse.urljoin(self.url, tag['href']).encode('utf-8')
             links.append(tag['href'])
         return links
 
