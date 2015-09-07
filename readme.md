@@ -1,10 +1,10 @@
 #### To-Do
-- create posting list
-- implement multi-threading
-- implement priority queue based scores dict
+- posting list
+- multi-threading
+- priority queue based scores dict
 - test CosineScorer
-- implement hashing logic for documents
-- implement file writer
+- hashing logic for documents
+- file writer
 - dict to maintain filename, hash-value, path
 
 #### components
