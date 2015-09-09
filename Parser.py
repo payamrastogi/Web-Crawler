@@ -10,7 +10,7 @@ class Parser(object):
     def __init__(self, url, query, log_level):
         self.url = url
         self.query = query
-        self.logger = Logger.getLogger("Parser", log_level)
+        self.logger = Logger.get_logger("Parser", log_level)
 
     def parse(self, text):
         links = self.__get_links(text)

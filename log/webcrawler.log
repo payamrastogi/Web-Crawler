@@ -25,3 +25,7 @@
 2015-09-05 19:14:14,880 DEBUG  Fetcher.fetch(): Response status code: 200
 2015-09-05 19:14:14,880 DEBUG  Fetcher.fetch(): Response status code: 200
 2015-09-05 19:14:14,880 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-09 14:40:20,965 DEBUG  <ipython-input-100-8fbeb842c7b6>.main(): test
+2015-09-09 15:37:17,275 ERROR  Fetcher.__can_fetch(): invalid url
+2015-09-09 15:37:17,276 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.animalplanet.com/pets/dogs/
+2015-09-09 15:39:08,062 ERROR  Fetcher.fetch(): Unexpected error occurred

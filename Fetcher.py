@@ -6,7 +6,7 @@ from urlparse import urlparse
 
 class Fetcher(object):
     def __init__(self, log_level):
-        self.logger = Logger.getLogger("Fetcher", log_level)
+        self.logger = Logger.get_logger("Fetcher", log_level)
 
     def fetch(self, url):
         try:
@@ -29,6 +29,7 @@ class Fetcher(object):
             base_url = self.__get_base_url(url)
             if base_url:
                 rp = robotparser.RobotFileParser()
+                print base_url
                 rp.set_url(base_url + "robots.txt")
                 rp.read()
                 return rp.can_fetch("*", url)

@@ -13,7 +13,7 @@ class Searcher(object):
         self.filter = 1; #turn on duplicate content filter
         self.safe = "off" #safe browsing - active/moderate/off
         self.hl = "en" #Defaults to en
-        self.logger = Logger.getLogger("Searcher", log_level)
+        self.logger = Logger.get_logger("Searcher", log_level)
 
     def __search(self):
         try:
