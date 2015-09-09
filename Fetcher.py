@@ -1,20 +1,12 @@
 import requests
 import logging
 import robotparser
+from Logger import Logger
 from urlparse import urlparse
 
 class Fetcher(object):
     def __init__(self, log_level):
-        self.__setup_logging(log_level)
-
-    def __setup_logging(self, level):
-        logger = logging.getLogger("Fetcher")
-        hdlr = logging.FileHandler("./log/webcrawler.log")
-        formatter = logging.Formatter("%(asctime)-15s %(levelname)s  %(module)s.%(funcName)s(): %(message)s")
-        hdlr.setFormatter(formatter)
-        logger.addHandler(hdlr)
-        logger.setLevel(level)
-        self.logger = logger
+        self.logger = Logger.getLogger("Fetcher", log_level)
 
     def fetch(self, url):
         try:

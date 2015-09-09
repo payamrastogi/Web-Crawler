@@ -1,22 +1,14 @@
 import re
 import logging
 from math import log
+from Logger import Logger
 
 class CosineScorer(object):
     def __init__(self, query, p_list, total_docs,log_level):
         self.query = query
         self.p_list = p_list
         self.total_docs = total_docs
-        self.__setup_logging(log_level)
-
-    def __setup_logging(self, level):
-        logger = logging.getLogger("CosineScorer")
-        hdlr = logging.FileHandler("./log/webcrawler.log")
-        formatter = logging.Formatter("%(asctime)-15s %(levelname)s  %(module)s.%(funcName)s(): %(message)s")
-        hdlr.setFormatter(formatter)
-        logger.addHandler(hdlr)
-        logger.setLevel(level)
-        self.logger = logger
+        self.logger = Logger.getLogger("CosineScorer", log_level)
 
     def get_score(self, query, p_list):
         tfidf_query = {}

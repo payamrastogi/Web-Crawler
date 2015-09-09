@@ -2,6 +2,7 @@ import logging
 import requests
 import json
 import argparse
+from Logger import Logger
 
 search_url = "http://ajax.googleapis.com/ajax/services/search/web"
 class Searcher(object):
@@ -12,16 +13,7 @@ class Searcher(object):
         self.filter = 1; #turn on duplicate content filter
         self.safe = "off" #safe browsing - active/moderate/off
         self.hl = "en" #Defaults to en
-        self.__setup_logging(log_level)
-
-    def __setup_logging(self, level):
-        logger = logging.getLogger("Searcher")
-        hdlr = logging.FileHandler("./log/webcrawler.log")
-        formatter = logging.Formatter("%(asctime)-15s %(levelname)s  %(module)s.%(funcName)s(): %(message)s")
-        hdlr.setFormatter(formatter)
-        logger.addHandler(hdlr)
-        logger.setLevel(level)
-        self.logger = logger
+        self.logger = Logger.getLogger("Searcher", log_level)
 
     def __search(self):
         try:

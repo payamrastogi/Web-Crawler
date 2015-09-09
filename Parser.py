@@ -3,22 +3,14 @@ import re
 import collections
 import logging
 from Fetcher import Fetcher
+from Logger import Logger
 from BeautifulSoup import BeautifulSoup
 
 class Parser(object):
     def __init__(self, url, query, log_level):
         self.url = url
         self.query = query
-        self.__setup_logging(log_level)
-
-    def __setup_logging(self, level):
-        logger = logging.getLogger("Parser")
-        hdlr = logging.FileHandler("./log/webcrawler.log")
-        formatter = logging.Formatter("%(asctime)-15s %(levelname)s  %(module)s.%(funcName)s(): %(message)s")
-        hdlr.setFormatter(formatter)
-        logger.addHandler(hdlr)
-        logger.setLevel(level)
-        self.logger = logger
+        self.logger = Logger.getLogger("Parser", log_level)
 
     def parse(self, text):
         links = self.__get_links(text)

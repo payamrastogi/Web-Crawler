@@ -7,6 +7,13 @@
 - file writer
 - dict to maintain filename, hash-value, path
 
+#### Ranking and Retrieving Details
+- Fetch links for top-10 results from Google for a query.
+- Fetch first link from search results and update term frequency for document for all the terms and calculate score for this document and store it in priority queue (prioirity queue data structure will contain following fields - doc_score, doc_hashcode, term frequency for each term in query, doc_url, downloaded_path??) and mark them visited and fetch all the links from this page and add them in the queue.
+- Fetch second link from search results and update term frequency for document for all the terms and calculate the score for this document and mark them visited
+- so on until all the search term links are downloaded and scored.
+- Now fetch all the link.
+
 #### components
  - robotparser - https://docs.python.org/2/library/robotparser.html
  - urlib2 - https://docs.python.org/2/library/urllib2.html
@@ -28,3 +35,4 @@
     * http://stackoverflow.com/questions/9626535/get-domain-name-from-url   
     * https://docs.python.org/2/library/urlparse.html
  - Unicode strings to regular strings - http://stackoverflow.com/questions/4855645/how-to-turn-unicode-strings-into-regular-strings
+ - Priority Queue - http://www.bogotobogo.com/python/python_PriorityQueue_heapq_Data_Structure.php
