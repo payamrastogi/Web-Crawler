@@ -29,3 +29,4 @@
 2015-09-09 15:37:17,275 ERROR  Fetcher.__can_fetch(): invalid url
 2015-09-09 15:37:17,276 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.animalplanet.com/pets/dogs/
 2015-09-09 15:39:08,062 ERROR  Fetcher.fetch(): Unexpected error occurred
+2015-09-09 20:29:25,779 DEBUG  Fetcher.fetch(): Response status code: 200
