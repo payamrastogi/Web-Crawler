@@ -32,3 +32,4 @@
  - Unicode strings to regular strings - http://stackoverflow.com/questions/4855645/how-to-turn-unicode-strings-into-regular-strings
  - Priority Queue - http://www.bogotobogo.com/python/python_PriorityQueue_heapq_Data_Structure.php
  - static method - http://stackoverflow.com/questions/735975/static-methods-in-python
+ - BeautifulSoup - http://www.crummy.com/software/BeautifulSoup/
