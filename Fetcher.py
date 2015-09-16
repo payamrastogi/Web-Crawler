@@ -11,6 +11,7 @@ class Fetcher(object):
     def fetch(self, url):
         try:
             if self.__can_fetch(url):
+                headers = {"user-agent": "webcrawler", "contact-us":"pr1228@nyu.edu"}
                 response = requests.get(url)
                 if response.status_code != requests.codes.ok:
                     self.logger.debug("Response status code is not 200")

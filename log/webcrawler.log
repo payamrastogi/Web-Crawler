@@ -482,3 +482,107 @@ TypeError: expected a character buffer object
 2015-09-16 14:42:48,187 DEBUG  Writer.write(): in write
 2015-09-16 14:42:48,883 DEBUG  Fetcher.fetch(): Response status code: 200
 2015-09-16 14:42:48,883 DEBUG  Writer.write(): in write
+2015-09-16 17:39:28,546 ERROR  Fetcher.__can_fetch(): invalid url
+2015-09-16 17:39:28,546 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.food.com/
+2015-09-16 17:39:28,546 DEBUG  Writer.write(): in write
+2015-09-16 17:39:33,314 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:39:33,314 DEBUG  Writer.write(): in write
+2015-09-16 17:39:35,727 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 17:39:35,727 DEBUG  Writer.write(): in write
+2015-09-16 17:39:40,297 ERROR  Fetcher.__can_fetch(): invalid url
+2015-09-16 17:39:40,297 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 17:39:40,298 DEBUG  Writer.write(): in write
+2015-09-16 17:39:44,077 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:39:44,077 DEBUG  Writer.write(): in write
+2015-09-16 17:39:50,235 ERROR  Fetcher.fetch(): Unexpected error occurred
+2015-09-16 17:39:50,235 DEBUG  Writer.write(): in write
+2015-09-16 17:39:54,609 ERROR  Fetcher.__can_fetch(): invalid url
+2015-09-16 17:39:54,610 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.foodnetwork.com/
+2015-09-16 17:39:54,610 DEBUG  Writer.write(): in write
+2015-09-16 17:40:04,081 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:40:04,081 DEBUG  Writer.write(): in write
+2015-09-16 17:43:50,773 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:43:50,773 DEBUG  Writer.write(): in write
+2015-09-16 17:43:53,280 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:43:53,281 DEBUG  Writer.write(): in write
+2015-09-16 17:43:57,249 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 17:43:57,249 DEBUG  Writer.write(): in write
+2015-09-16 17:44:00,989 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 17:44:00,989 DEBUG  Writer.write(): in write
+2015-09-16 17:44:03,642 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:44:03,643 DEBUG  Writer.write(): in write
+2015-09-16 17:44:08,939 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:44:08,939 DEBUG  Writer.write(): in write
+2015-09-16 17:44:13,762 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:44:13,762 DEBUG  Writer.write(): in write
+2015-09-16 17:44:19,309 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:44:19,309 DEBUG  Writer.write(): in write
+2015-09-16 17:45:53,726 ERROR  Searcher.__search(): Unexpected Error occurred
+2015-09-16 17:45:53,726 INFO  Searcher.search(): no results found
+2015-09-16 17:46:10,073 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:10,073 DEBUG  Writer.write(): in write
+2015-09-16 17:46:13,737 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:13,737 DEBUG  Writer.write(): in write
+2015-09-16 17:46:16,507 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 17:46:16,507 DEBUG  Writer.write(): in write
+2015-09-16 17:46:17,023 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 17:46:17,023 DEBUG  Writer.write(): in write
+2015-09-16 17:46:20,519 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:20,519 DEBUG  Writer.write(): in write
+2015-09-16 17:46:22,242 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:22,242 DEBUG  Writer.write(): in write
+2015-09-16 17:46:24,100 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:24,100 DEBUG  Writer.write(): in write
+2015-09-16 17:46:31,296 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 17:46:31,296 DEBUG  Writer.write(): in write
+2015-09-16 17:47:06,561 ERROR  Searcher.__search(): Unexpected Error occurred
+2015-09-16 17:47:06,561 INFO  Searcher.search(): no results found
+2015-09-16 18:08:09,818 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:09,818 DEBUG  Writer.write(): in write
+2015-09-16 18:08:11,296 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:11,296 DEBUG  Writer.write(): in write
+2015-09-16 18:08:13,809 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 18:08:13,809 DEBUG  Writer.write(): in write
+2015-09-16 18:08:14,702 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 18:08:14,702 DEBUG  Writer.write(): in write
+2015-09-16 18:08:15,472 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:15,472 DEBUG  Writer.write(): in write
+2015-09-16 18:08:15,723 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:15,723 DEBUG  Writer.write(): in write
+2015-09-16 18:08:16,179 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:16,179 DEBUG  Writer.write(): in write
+2015-09-16 18:08:17,373 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:08:17,373 DEBUG  Writer.write(): in write
+2015-09-16 18:16:19,690 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:37,322 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:37,323 DEBUG  Writer.write(): in write
+2015-09-16 18:16:37,868 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:37,868 DEBUG  Writer.write(): in write
+2015-09-16 18:16:39,273 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 18:16:39,273 DEBUG  Writer.write(): in write
+2015-09-16 18:16:39,454 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 18:16:39,454 DEBUG  Writer.write(): in write
+2015-09-16 18:16:39,789 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:39,790 DEBUG  Writer.write(): in write
+2015-09-16 18:16:40,570 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:40,571 DEBUG  Writer.write(): in write
+2015-09-16 18:16:41,594 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:41,595 DEBUG  Writer.write(): in write
+2015-09-16 18:16:42,889 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:16:42,889 DEBUG  Writer.write(): in write
+2015-09-16 18:17:08,581 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:08,581 DEBUG  Writer.write(): in write
+2015-09-16 18:17:08,943 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:08,944 DEBUG  Writer.write(): in write
+2015-09-16 18:17:10,433 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 18:17:10,433 DEBUG  Writer.write(): in write
+2015-09-16 18:17:10,923 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 18:17:10,923 DEBUG  Writer.write(): in write
+2015-09-16 18:17:11,025 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:11,026 DEBUG  Writer.write(): in write
+2015-09-16 18:17:11,603 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:11,603 DEBUG  Writer.write(): in write
+2015-09-16 18:17:12,436 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:12,436 DEBUG  Writer.write(): in write
+2015-09-16 18:17:13,491 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:17:13,491 DEBUG  Writer.write(): in write

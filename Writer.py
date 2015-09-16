@@ -22,7 +22,6 @@ class Writer(object):
                 os.makedirs(dir)
             f = open(dir+"/index.html", 'w')
             f.write(str(text))
-            print f
             f.close()
         except Exception as ex:
             self.logger.error("Exception:", exc_info=True)
