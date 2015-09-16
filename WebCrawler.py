@@ -5,6 +5,7 @@ from Parser import Parser
 from URL import URL
 from Writer import Writer
 import Queue as Q
+import time
 
 def main():
     query = "food"
@@ -21,11 +22,13 @@ def main():
             prio_queue.put(URL(1, result["url"]))
 
     while not prio_queue.empty():
+        start = time.time()
         url = prio_queue.get()
         link_set.add(url.url)
         text = fetcher.fetch(url.url)
         file_writer.write(url.url, text)
-        print(str(url.priority) + "<---->" + url.url)
+        end = time.time()
+        print("fetched in: "+str(end-start)+" seconds " + str(url.priority) + "<---->" + url.url)
         if text is not None:
             parser = Parser(url.url, query, logging.DEBUG)
             for link in parser.parseGetLinks(text):

@@ -586,3 +586,21 @@ TypeError: expected a character buffer object
 2015-09-16 18:17:12,436 DEBUG  Writer.write(): in write
 2015-09-16 18:17:13,491 DEBUG  Fetcher.fetch(): Response status code: 200
 2015-09-16 18:17:13,491 DEBUG  Writer.write(): in write
+2015-09-16 18:26:03,239 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:03,239 DEBUG  Writer.write(): in write
+2015-09-16 18:26:20,966 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:20,967 DEBUG  Writer.write(): in write
+2015-09-16 18:26:21,793 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:21,793 DEBUG  Writer.write(): in write
+2015-09-16 18:26:23,670 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 18:26:23,671 DEBUG  Writer.write(): in write
+2015-09-16 18:26:24,326 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 18:26:24,326 DEBUG  Writer.write(): in write
+2015-09-16 18:26:25,165 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:25,165 DEBUG  Writer.write(): in write
+2015-09-16 18:26:25,518 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:25,519 DEBUG  Writer.write(): in write
+2015-09-16 18:26:27,022 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:27,022 DEBUG  Writer.write(): in write
+2015-09-16 18:26:28,309 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 18:26:28,309 DEBUG  Writer.write(): in write
