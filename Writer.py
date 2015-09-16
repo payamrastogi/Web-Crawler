@@ -1,5 +1,6 @@
 import logging
 from Logger import Logger
+from urlparse import urlparse
 
 class Writer(object):
 
@@ -10,8 +11,20 @@ class Writer(object):
     def write(self, filename, text):
         self.logger.debug("in write")
         try:
-            f = open(base_path+filename, 'w')
+            f = open(self.base_path+filename, 'w')
             f.write(text)
+            f.close()
+        except:
+            self.logger.debug("some exception")
+
+    def writeToPath(self, url, text):
+        self.logger.debug("in write")
+        parsed_uri = urlparse('http://stackoverflow.com/questions/1234567/blah-blah-blah-blah')
+        domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+        try:
+            f = open(domain+"index.html", 'w')
+            f.write(text)
+            print f
             f.close()
         except:
             self.logger.debug("some exception")

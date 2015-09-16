@@ -29,7 +29,7 @@ class Fetcher(object):
             base_url = self.__get_base_url(url)
             if base_url:
                 rp = robotparser.RobotFileParser()
-                print base_url
+                #print base_url
                 rp.set_url(base_url + "robots.txt")
                 rp.read()
                 return rp.can_fetch("*", url)
@@ -51,7 +51,7 @@ class Fetcher(object):
 def main():
     fetcher = Fetcher(logging.DEBUG)
     url = "http://www.animalplanet.com/pets/dogs/"
-    print fetcher.fetch(url)
+    #print fetcher.fetch(url)
 
 if __name__ == "__main__":
     main()
