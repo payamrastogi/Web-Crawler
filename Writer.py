@@ -15,7 +15,7 @@ class Writer(object):
             f.write(text)
             f.close()
         except:
-            self.logger.debug("some exception")
+            self.logger.error("Exception:", exc_info=True)
 
     def writeToPath(self, url, text):
         self.logger.debug("in write")
@@ -26,8 +26,8 @@ class Writer(object):
             f.write(text)
             print f
             f.close()
-        except:
-            self.logger.debug("some exception")
+        except Exception as ex:
+            self.logger.error("Exception:", exc_info=True)
 
 def main():
     w = Writer("./", logging.DEBUG)
