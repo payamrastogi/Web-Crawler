@@ -24,7 +24,7 @@ def main():
         url = prio_queue.get()
         link_set.add(url.url)
         text = fetcher.fetch(url.url)
-        file_writer.writeToPath(url, text)
+        file_writer.write(url.url, text)
         print(str(url.priority) + "<---->" + url.url)
         if text is not None:
             parser = Parser(url.url, query, logging.DEBUG)

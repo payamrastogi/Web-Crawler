@@ -1,6 +1,8 @@
 import logging
 from Logger import Logger
 from urlparse import urlparse
+import hashlib
+import os
 
 class Writer(object):
 
@@ -8,22 +10,18 @@ class Writer(object):
         self.base_path = base_path
         self.logger = Logger.get_logger("Writer", log_level)
 
-    def write(self, filename, text):
-        self.logger.debug("in write")
+    def write(self, url, text):
         try:
-            f = open(self.base_path+filename, 'w')
-            f.write(text)
-            f.close()
-        except:
-            self.logger.error("Exception:", exc_info=True)
-
-    def writeToPath(self, url, text):
-        self.logger.debug("in write")
-        parsed_uri = urlparse('http://stackoverflow.com/questions/1234567/blah-blah-blah-blah')
-        domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
-        try:
-            f = open(domain+"index.html", 'w')
-            f.write(text)
+            self.logger.debug("in write")
+            parsed_uri = urlparse(url)
+            net_loc = '{uri.netloc}'.format(uri=parsed_uri)
+            path = '{uri.path}'.format(uri=parsed_uri)
+            hashed =  hashlib.sha224(net_loc).hexdigest()
+            dir = hashed + path
+            if not os.path.isdir(dir):
+                os.makedirs(dir)
+            f = open(dir+"/index.html", 'w')
+            f.write(str(text))
             print f
             f.close()
         except Exception as ex:

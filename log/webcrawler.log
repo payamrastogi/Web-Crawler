@@ -30,3 +30,455 @@
 2015-09-09 15:37:17,276 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.animalplanet.com/pets/dogs/
 2015-09-09 15:39:08,062 ERROR  Fetcher.fetch(): Unexpected error occurred
 2015-09-09 20:29:25,779 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:56:12,002 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:56:12,004 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:56:12,004 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:56:12,671 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:56:12,671 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:56:12,671 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:14,066 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:58:14,068 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:14,068 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:14,796 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 00:58:14,796 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:14,796 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:15,663 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 00:58:15,663 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:15,663 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:16,827 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:58:16,827 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:16,827 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:17,516 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:58:17,516 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:17,517 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 00:58:18,155 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 00:58:18,155 DEBUG  Writer.writeToPath(): in write
+2015-09-16 00:58:18,155 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:23,061 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:23,062 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:23,063 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:23,622 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:23,622 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:23,622 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:24,394 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:24,395 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:24,395 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:25,186 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:03:25,186 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:25,186 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:27,656 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:03:27,656 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:27,656 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:28,902 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:28,903 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:28,903 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:29,579 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:29,579 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:29,580 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:03:29,775 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:03:29,775 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:03:29,775 DEBUG  Writer.writeToPath(): some exception
+2015-09-16 01:05:37,348 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:05:37,350 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:05:37,350 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:05:37,945 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:05:37,945 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:05:37,945 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:38,949 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:07:38,950 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:38,950 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:39,201 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:07:39,202 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:39,202 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:40,460 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:07:40,460 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:40,460 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:41,657 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:07:41,657 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:41,657 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:42,352 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:07:42,352 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:42,352 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:07:43,268 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:07:43,268 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:07:43,268 DEBUG  Writer.writeToPath(): None
+2015-09-16 01:09:49,412 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:49,414 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:49,414 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:49,957 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:49,957 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:49,958 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:51,160 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:51,160 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:51,160 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:51,912 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:09:51,912 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:51,912 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:52,659 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:09:52,659 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:52,659 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:57,248 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:57,248 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:57,248 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:58,190 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:58,190 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:58,191 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:09:59,726 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:09:59,727 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:09:59,727 DEBUG  Writer.writeToPath(): Excetion occured
+2015-09-16 01:19:54,660 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:19:54,662 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:01,375 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:01,376 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:01,376 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10aeefb40>
+2015-09-16 01:21:02,354 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:02,355 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:02,355 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bbffa00>
+2015-09-16 01:21:03,496 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:03,497 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:03,497 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdd79b0>
+2015-09-16 01:21:03,783 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:21:03,783 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:03,784 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdd7fa0>
+2015-09-16 01:21:05,006 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:21:05,006 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:05,006 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdd7e60>
+2015-09-16 01:21:05,981 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:05,981 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:05,981 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdd7cd0>
+2015-09-16 01:21:06,652 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:06,653 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:06,653 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdebb90>
+2015-09-16 01:21:07,279 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:21:07,279 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:21:07,279 DEBUG  Writer.writeToPath(): <generator object <genexpr> at 0x10bdebf50>
+2015-09-16 01:22:47,756 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:47,756 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:47,757 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:48,359 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:48,359 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:48,359 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:49,531 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:49,532 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:49,532 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:49,773 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:22:49,773 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:49,773 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:50,522 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:22:50,522 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:50,522 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:51,319 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:51,320 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:51,320 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:51,984 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:51,984 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:51,984 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:22:54,099 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:22:54,099 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:22:54,099 DEBUG  Writer.writeToPath(): Exception occured:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 27, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:24:09,049 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:24:09,049 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:24:09,050 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:24:09,572 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:24:09,572 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:24:09,573 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:10,496 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:28:10,497 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:10,497 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:11,169 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 01:28:11,170 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:11,170 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:15,439 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 01:28:15,439 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:15,439 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:16,713 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:28:16,713 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:16,714 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:17,032 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:28:17,032 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:17,032 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 01:28:17,680 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 01:28:17,681 DEBUG  Writer.writeToPath(): in write
+2015-09-16 01:28:17,681 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 25, in writeToPath
+    f = open(domain+"index.html", 'w')
+IOError: [Errno 2] No such file or directory: 'http://stackoverflow.com/index.html'
+2015-09-16 14:15:08,195 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:15:08,196 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:11,152 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:11,153 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:11,153 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:17:11,153 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:17:11,153 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017//
+2015-09-16 14:17:37,209 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:37,209 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:37,209 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:17:37,209 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:17:37,210 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017//
+2015-09-16 14:17:50,533 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:50,533 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:50,533 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:17:50,533 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:17:50,533 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017//
+2015-09-16 14:17:51,099 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:51,099 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:51,099 DEBUG  Writer.writeToPath(): en.wikipedia.org
+2015-09-16 14:17:51,100 DEBUG  Writer.writeToPath(): /wiki/Food
+2015-09-16 14:17:51,100 DEBUG  Writer.writeToPath(): a4e841f65330147570f7e196c884e483a0232a6b6663ea4c18b1bab3//wiki/Food
+2015-09-16 14:17:52,497 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 14:17:52,497 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:52,497 DEBUG  Writer.writeToPath(): evernote.com
+2015-09-16 14:17:52,497 DEBUG  Writer.writeToPath(): /contact/support/kb/%23!/article/95845417
+2015-09-16 14:17:52,497 DEBUG  Writer.writeToPath(): c60bce63749c349d3d1ff03ffba6ba0bbe640026cc715b5783765255//contact/support/kb/%23!/article/95845417
+2015-09-16 14:17:52,497 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:17:52,694 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 14:17:52,694 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:52,694 DEBUG  Writer.writeToPath(): www.sciencedirect.com
+2015-09-16 14:17:52,695 DEBUG  Writer.writeToPath(): /science/journal/03088146
+2015-09-16 14:17:52,695 DEBUG  Writer.writeToPath(): b4916a0cddb8a3ea499d1b4c9cf803c7ce3b30e03edf0d9724e583ad//science/journal/03088146
+2015-09-16 14:17:52,695 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:17:52,879 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:52,880 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:52,880 DEBUG  Writer.writeToPath(): www.fda.gov
+2015-09-16 14:17:52,880 DEBUG  Writer.writeToPath(): /Food/
+2015-09-16 14:17:52,880 DEBUG  Writer.writeToPath(): 5081ad599531a43d1ddc8f5891536bdd111de16904b4027cada6cd6f//Food/
+2015-09-16 14:17:53,468 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:53,468 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:53,468 DEBUG  Writer.writeToPath(): www.yahoo.com
+2015-09-16 14:17:53,468 DEBUG  Writer.writeToPath(): /food
+2015-09-16 14:17:53,469 DEBUG  Writer.writeToPath(): 71bbfd50f651043c8ed2ea77179bf6f3d52b82b7e77b73d4d5bb29b1//food
+2015-09-16 14:17:54,259 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:54,260 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:54,261 DEBUG  Writer.writeToPath(): www.foodnetwork.com
+2015-09-16 14:17:54,261 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:17:54,262 DEBUG  Writer.writeToPath(): aa1b156fd387095d1d0f9a9e88959d7fff83fc2c014f22b2fd25f13d//
+2015-09-16 14:17:55,031 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:17:55,031 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:17:55,031 DEBUG  Writer.writeToPath(): www.huffingtonpost.com
+2015-09-16 14:17:55,031 DEBUG  Writer.writeToPath(): /taste/
+2015-09-16 14:17:55,032 DEBUG  Writer.writeToPath(): 5da20bd0441a058938be6b3ca0a885a65f5e8241ce5510ac6ed8bf8b//taste/
+2015-09-16 14:25:29,565 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:29,566 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:29,566 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:25:29,566 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:25:29,566 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017/
+2015-09-16 14:25:31,559 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:31,559 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:31,559 DEBUG  Writer.writeToPath(): en.wikipedia.org
+2015-09-16 14:25:31,559 DEBUG  Writer.writeToPath(): /wiki/Food
+2015-09-16 14:25:31,559 DEBUG  Writer.writeToPath(): a4e841f65330147570f7e196c884e483a0232a6b6663ea4c18b1bab3/wiki/Food
+2015-09-16 14:25:33,016 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 14:25:33,016 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:33,016 DEBUG  Writer.writeToPath(): evernote.com
+2015-09-16 14:25:33,016 DEBUG  Writer.writeToPath(): /contact/support/kb/%23!/article/95845417
+2015-09-16 14:25:33,016 DEBUG  Writer.writeToPath(): c60bce63749c349d3d1ff03ffba6ba0bbe640026cc715b5783765255/contact/support/kb/%23!/article/95845417
+2015-09-16 14:25:33,017 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:25:33,175 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 14:25:33,175 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:33,175 DEBUG  Writer.writeToPath(): www.sciencedirect.com
+2015-09-16 14:25:33,175 DEBUG  Writer.writeToPath(): /science/journal/03088146
+2015-09-16 14:25:33,175 DEBUG  Writer.writeToPath(): b4916a0cddb8a3ea499d1b4c9cf803c7ce3b30e03edf0d9724e583ad/science/journal/03088146
+2015-09-16 14:25:33,176 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:25:33,280 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:33,280 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:33,281 DEBUG  Writer.writeToPath(): www.fda.gov
+2015-09-16 14:25:33,281 DEBUG  Writer.writeToPath(): /Food/
+2015-09-16 14:25:33,281 DEBUG  Writer.writeToPath(): 5081ad599531a43d1ddc8f5891536bdd111de16904b4027cada6cd6f/Food/
+2015-09-16 14:25:34,014 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:34,015 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:34,015 DEBUG  Writer.writeToPath(): www.huffingtonpost.com
+2015-09-16 14:25:34,015 DEBUG  Writer.writeToPath(): /taste/
+2015-09-16 14:25:34,015 DEBUG  Writer.writeToPath(): 5da20bd0441a058938be6b3ca0a885a65f5e8241ce5510ac6ed8bf8b/taste/
+2015-09-16 14:25:35,210 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:35,210 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:35,210 DEBUG  Writer.writeToPath(): www.foodnetwork.com
+2015-09-16 14:25:35,210 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:25:35,210 DEBUG  Writer.writeToPath(): aa1b156fd387095d1d0f9a9e88959d7fff83fc2c014f22b2fd25f13d/
+2015-09-16 14:25:36,114 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:25:36,133 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:25:36,134 DEBUG  Writer.writeToPath(): www.yahoo.com
+2015-09-16 14:25:36,137 DEBUG  Writer.writeToPath(): /food
+2015-09-16 14:25:36,139 DEBUG  Writer.writeToPath(): 71bbfd50f651043c8ed2ea77179bf6f3d52b82b7e77b73d4d5bb29b1/food
+2015-09-16 14:31:15,859 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:15,860 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:15,860 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:31:15,860 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:31:15,860 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017/
+2015-09-16 14:31:16,981 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:16,981 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:16,981 DEBUG  Writer.writeToPath(): en.wikipedia.org
+2015-09-16 14:31:16,981 DEBUG  Writer.writeToPath(): /wiki/Food
+2015-09-16 14:31:16,981 DEBUG  Writer.writeToPath(): a4e841f65330147570f7e196c884e483a0232a6b6663ea4c18b1bab3/wiki/Food
+2015-09-16 14:31:18,872 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 14:31:18,872 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:18,872 DEBUG  Writer.writeToPath(): evernote.com
+2015-09-16 14:31:18,872 DEBUG  Writer.writeToPath(): /contact/support/kb/%23!/article/95845417
+2015-09-16 14:31:18,872 DEBUG  Writer.writeToPath(): c60bce63749c349d3d1ff03ffba6ba0bbe640026cc715b5783765255/contact/support/kb/%23!/article/95845417
+2015-09-16 14:31:18,873 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:31:19,439 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 14:31:19,440 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:19,440 DEBUG  Writer.writeToPath(): www.sciencedirect.com
+2015-09-16 14:31:19,440 DEBUG  Writer.writeToPath(): /science/journal/03088146
+2015-09-16 14:31:19,440 DEBUG  Writer.writeToPath(): b4916a0cddb8a3ea499d1b4c9cf803c7ce3b30e03edf0d9724e583ad/science/journal/03088146
+2015-09-16 14:31:19,440 ERROR  Writer.writeToPath(): Exception:
+Traceback (most recent call last):
+  File "/Users/payamrastogi/Dropbox/NYU/third sem/Web Search Engine/Web Crawler/Writer.py", line 36, in writeToPath
+    f.write(text)
+TypeError: expected a character buffer object
+2015-09-16 14:31:19,865 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:19,865 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:19,865 DEBUG  Writer.writeToPath(): www.fda.gov
+2015-09-16 14:31:19,865 DEBUG  Writer.writeToPath(): /Food/
+2015-09-16 14:31:19,865 DEBUG  Writer.writeToPath(): 5081ad599531a43d1ddc8f5891536bdd111de16904b4027cada6cd6f/Food/
+2015-09-16 14:31:20,539 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:20,539 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:20,539 DEBUG  Writer.writeToPath(): www.huffingtonpost.com
+2015-09-16 14:31:20,539 DEBUG  Writer.writeToPath(): /taste/
+2015-09-16 14:31:20,539 DEBUG  Writer.writeToPath(): 5da20bd0441a058938be6b3ca0a885a65f5e8241ce5510ac6ed8bf8b/taste/
+2015-09-16 14:31:21,804 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:21,805 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:21,805 DEBUG  Writer.writeToPath(): www.foodnetwork.com
+2015-09-16 14:31:21,805 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:31:21,805 DEBUG  Writer.writeToPath(): aa1b156fd387095d1d0f9a9e88959d7fff83fc2c014f22b2fd25f13d/
+2015-09-16 14:31:23,060 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:31:23,060 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:31:23,060 DEBUG  Writer.writeToPath(): www.yahoo.com
+2015-09-16 14:31:23,060 DEBUG  Writer.writeToPath(): /food
+2015-09-16 14:31:23,060 DEBUG  Writer.writeToPath(): 71bbfd50f651043c8ed2ea77179bf6f3d52b82b7e77b73d4d5bb29b1/food
+2015-09-16 14:35:07,908 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:07,908 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:07,908 DEBUG  Writer.writeToPath(): www.food.com
+2015-09-16 14:35:07,908 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:35:07,908 DEBUG  Writer.writeToPath(): 5adae86d9f7326c5ceb4336ecc98fecef0cce2126822ffe4770f4017/
+2015-09-16 14:35:09,056 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:09,056 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:09,056 DEBUG  Writer.writeToPath(): en.wikipedia.org
+2015-09-16 14:35:09,056 DEBUG  Writer.writeToPath(): /wiki/Food
+2015-09-16 14:35:09,056 DEBUG  Writer.writeToPath(): a4e841f65330147570f7e196c884e483a0232a6b6663ea4c18b1bab3/wiki/Food
+2015-09-16 14:35:12,144 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 14:35:12,144 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:12,144 DEBUG  Writer.writeToPath(): evernote.com
+2015-09-16 14:35:12,144 DEBUG  Writer.writeToPath(): /contact/support/kb/%23!/article/95845417
+2015-09-16 14:35:12,144 DEBUG  Writer.writeToPath(): c60bce63749c349d3d1ff03ffba6ba0bbe640026cc715b5783765255/contact/support/kb/%23!/article/95845417
+2015-09-16 14:35:12,411 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 14:35:12,412 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:12,412 DEBUG  Writer.writeToPath(): www.sciencedirect.com
+2015-09-16 14:35:12,412 DEBUG  Writer.writeToPath(): /science/journal/03088146
+2015-09-16 14:35:12,412 DEBUG  Writer.writeToPath(): b4916a0cddb8a3ea499d1b4c9cf803c7ce3b30e03edf0d9724e583ad/science/journal/03088146
+2015-09-16 14:35:15,080 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:15,080 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:15,080 DEBUG  Writer.writeToPath(): www.fda.gov
+2015-09-16 14:35:15,080 DEBUG  Writer.writeToPath(): /Food/
+2015-09-16 14:35:15,081 DEBUG  Writer.writeToPath(): 5081ad599531a43d1ddc8f5891536bdd111de16904b4027cada6cd6f/Food/
+2015-09-16 14:35:15,541 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:15,541 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:15,541 DEBUG  Writer.writeToPath(): www.huffingtonpost.com
+2015-09-16 14:35:15,542 DEBUG  Writer.writeToPath(): /taste/
+2015-09-16 14:35:15,542 DEBUG  Writer.writeToPath(): 5da20bd0441a058938be6b3ca0a885a65f5e8241ce5510ac6ed8bf8b/taste/
+2015-09-16 14:35:16,487 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:16,487 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:16,487 DEBUG  Writer.writeToPath(): www.foodnetwork.com
+2015-09-16 14:35:16,487 DEBUG  Writer.writeToPath(): /
+2015-09-16 14:35:16,487 DEBUG  Writer.writeToPath(): aa1b156fd387095d1d0f9a9e88959d7fff83fc2c014f22b2fd25f13d/
+2015-09-16 14:35:19,331 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:35:19,331 DEBUG  Writer.writeToPath(): in write
+2015-09-16 14:35:19,331 DEBUG  Writer.writeToPath(): www.yahoo.com
+2015-09-16 14:35:19,331 DEBUG  Writer.writeToPath(): /food
+2015-09-16 14:35:19,331 DEBUG  Writer.writeToPath(): 71bbfd50f651043c8ed2ea77179bf6f3d52b82b7e77b73d4d5bb29b1/food
+2015-09-16 14:42:43,169 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:43,170 DEBUG  Writer.write(): in write
+2015-09-16 14:42:43,629 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:43,629 DEBUG  Writer.write(): in write
+2015-09-16 14:42:45,856 DEBUG  Fetcher.fetch(): Response status code is not 200
+2015-09-16 14:42:45,856 DEBUG  Writer.write(): in write
+2015-09-16 14:42:46,479 DEBUG  Fetcher.fetch(): Useragent is not allowed to fetch the url: http://www.sciencedirect.com/science/journal/03088146
+2015-09-16 14:42:46,479 DEBUG  Writer.write(): in write
+2015-09-16 14:42:46,949 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:46,949 DEBUG  Writer.write(): in write
+2015-09-16 14:42:47,302 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:47,305 DEBUG  Writer.write(): in write
+2015-09-16 14:42:48,187 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:48,187 DEBUG  Writer.write(): in write
+2015-09-16 14:42:48,883 DEBUG  Fetcher.fetch(): Response status code: 200
+2015-09-16 14:42:48,883 DEBUG  Writer.write(): in write
