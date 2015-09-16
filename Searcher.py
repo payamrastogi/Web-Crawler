@@ -41,8 +41,9 @@ class Searcher(object):
         if not results:
             self.logger.info("no results found")
             return
-        for result in results["responseData"]["results"]:
-            print "-"+result["titleNoFormatting"]
+        #for result in results["responseData"]["results"]:
+        #   print "-"+result["titleNoFormatting"]
+        return results
 
 def main():
     parser = argparse.ArgumentParser(description="A simple Google search module for Python")

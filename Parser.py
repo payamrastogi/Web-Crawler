@@ -15,29 +15,38 @@ class Parser(object):
     def parse(self, text):
         links = self.__get_links(text)
         freqPairs = self.__get_frequency(self.query, text)
-        print links
-        print freqPairs
+        #print links
+        #print freqPairs
+
+    def parseGetLinks(self, text):
+        return self.__get_links(text)
+
+    def parseGetFrequency(self, text):
+        return self.__get_frequency(self.query, text)
 
     def __get_frequency(self, query, text):
         freqPairs = {}
-        words = re.findall('\w+', text.lower())
-        pairs = collections.Counter(words)
-        searchTerms = re.findall("\w+", query.lower())
-        for term in searchTerms:
-            freqPairs[term] = pairs[term]
+        if text is not None:
+            words = re.findall('\w+', text.lower())
+            pairs = collections.Counter(words)
+            searchTerms = re.findall("\w+", query.lower())
+            for term in searchTerms:
+                freqPairs[term] = pairs[term]
         return freqPairs
 
     def __get_links(self, text):
         links = []
-        soup = BeautifulSoup(text)
-        for tag in soup.findAll('a', href=True):
-            tag['href'] = urlparse.urljoin(self.url, tag['href']).encode('utf-8')
-            links.append(tag['href'])
+        if text is not None:
+            soup = BeautifulSoup(text)
+            for tag in soup.findAll('a', href=True):
+                #print(tag['href'])
+                tag['href'] = urlparse.urljoin(self.url, tag['href']).encode('utf-8')
+                links.append(tag['href'])
         return links
 
 def main():
-    url = "http://www.animalplanet.com/pets/dogs/"
-    parser = Parser(url, "dog cats", logging.DEBUG)
+    url = "http://www.sciencedirect.com/"
+    parser = Parser(url, "food", logging.DEBUG)
     fetcher = Fetcher(logging.DEBUG)
     text = fetcher.fetch(url)
     parser.parse(text)
