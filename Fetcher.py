@@ -20,10 +20,10 @@ class Fetcher(object):
                     self.logger.debug("Response status code: 200")
                     return response.content
             else:
-                self.logger.debug("Useragent is not allowed to fetch the url: " + url)
+                self.logger.debug("useragent is not allowed to fetch the url: " + url)
                 return None
         except:
-            self.logger.error("Unexpected error occurred")
+            self.logger.error("unexpected error occurred")
 
     def __can_fetch(self, url):
         try:

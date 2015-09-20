@@ -1,28 +1,42 @@
 import re
-from math import log
-from math import sqrt
-import logging
-from Logger import Logger
-import Queue as Q
-import hashlib
-import pickle
-from Indexer import Indexer
 import time
 import collections
+import logging
+import hashlib
+import Queue as Q
+from math import log
+from math import sqrt
+from Logger import Logger
+from Indexer import Indexer
 
+""" 
+To Calculate the cosine score for a document(html page) 
+Modification to orginal Cosine Similarity Score 
+instead of using  (|corpus| / df(t,q)), where |corpus| is the total number of documents 
+and df(t,q) is the number of documents in which term t appears, we have used (total_frequency/frequency_of_term)
+where total_frequency is the total number of words appear in wikipedia (english) pages and frequency_of_term is 
+the frequency of term in those pages
+total_frequency is 1229245740
+"""
 class CosineScorer(object):
 
+    """
+        @params word_dic A dictionary containing words and their normaized frequency
+        @params query Search query
+    """
     def __init__(self, word_dict, query, log_level):
         self.word_dict = word_dict
-        #self.word_dict = pickle.load(open("wordfreq.pql", "rb"))
         self.query = query
-        self.tfidf_query = {}
+        self.tfidf_query = {} #term frequency inverse document frequency, here query is the document
         self.searchTerms = re.findall("\w+", query.lower())
         pairs = collections.Counter(self.searchTerms)
         for term in self.searchTerms:
             self.tfidf_query[term] = (1 + log(pairs[term])) * self.word_dict[term]
         self.logger = Logger.get_logger("CosineScorer", log_level)
 
+    """
+        Return the document score
+    """
     def get_score(self, text, url):
         scores = 0.0
         tfidf_document = {}
@@ -40,6 +54,7 @@ class CosineScorer(object):
         scores = scores/sqrt(magnitude)
         return scores
 
+""" to test CosineScorer """
 def main():
     start = time.time()
     indexer = Indexer(logging.DEBUG)

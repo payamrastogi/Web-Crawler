@@ -1,8 +1,9 @@
 import logging
-from Logger import Logger
-from urlparse import urlparse
 import hashlib
 import os
+from Logger import Logger
+from urlparse import urlparse
+
 
 class Writer(object):
 
