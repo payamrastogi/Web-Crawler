@@ -3,6 +3,7 @@ import logging
 import robotparser
 from Logger import Logger
 from urlparse import urlparse
+from URLValidator import runtime_igonre_host
 
 class Fetcher(object):
     def __init__(self, log_level):
@@ -18,8 +19,15 @@ class Fetcher(object):
                     return None
                 else:
                     self.logger.debug("Response status code: 200")
-                    return response.content
+                    if response.headers['content-type'].startswith("text/html"):
+                        return response.content
+                    else:
+                        self.logger.debug("Invalid Content from the url: " + url)
+                        return None
             else:
+                parsed = urlparse(url)
+                if parsed is not None and parsed.hostname is not None:
+                    runtime_igonre_host.add(parsed.hostname)
                 self.logger.debug("Useragent is not allowed to fetch the url: " + url)
                 return None
         except:

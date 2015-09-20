@@ -1,18 +1,30 @@
 from urlparse import urlparse
 from os.path import splitext
+import unicodedata
+from urllib import unquote
+from Logger import Logger
+import logging
 
 seen_urls = set()
+runtime_igonre_host = set()
+logger = Logger.get_logger("URLValidator", logging.DEBUG)
 
-def is_unique(website):
+def is_unique(url):
     # Strip of the last bit
-    parsed = urlparse(website)
-    if parsed is None or parsed.hostname:
-        return False
-    url = parsed.hostname + str(parsed.path)
-    if url in seen_urls:
-        return False
-    seen_urls.add(url)
-    return True
+    try:
+        parse_url = unicodedata.normalize('NFC', url).encode('utf-8')
+        parsed = urlparse(parse_url)
+        if parsed is None or parsed.hostname is None:
+            return False
+        url = parsed.hostname + str(parsed.path)
+        if url in seen_urls:
+            return False
+        seen_urls.add(url)
+        return True
+    except:
+        #print "processed in " + str(time.time()-process_start)+ " seconds."
+        logger.error("Exception:", exc_info=True)
+        return True
 
 def get_ext(url):
     """Return the filename extension from url, or ''."""
@@ -44,6 +56,18 @@ def is_valid_extention(url):
         return False
     return True
 
+def is_valid_host(url):
+    IGNORED_HOSTS = [
+        'www.youtube.com', 'www.dailymotion.com', 'www.netflix.com', 'www.yelp.com', 'www.grubhub.com',
+        'www.mediawiki.org', 'www.twitter.com' , 'www.tv.com'
+    ]
+    parsed = urlparse(url)
+    if parsed is None or parsed.hostname is None:
+        return False
+    if parsed.hostname in IGNORED_HOSTS or parsed.hostname in runtime_igonre_host:
+        return False
+    return True
+
 def is_valid_url(url):
-    return is_unique(url) and is_valid_extention(url)
+    return is_unique(url) and is_valid_extention(url) and is_valid_host(url)
 
