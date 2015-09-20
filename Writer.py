@@ -4,13 +4,14 @@ import os
 from Logger import Logger
 from urlparse import urlparse
 
-
+""" Write content to file """
 class Writer(object):
 
     def __init__(self, base_path, log_level):
         self.base_path = base_path
         self.logger = Logger.get_logger("Writer", log_level)
 
+    """ create folder with name hash(url) and save the file with name index.html """
     def write(self, url, text):
         try:
             self.logger.debug("in write")
@@ -26,7 +27,8 @@ class Writer(object):
             f.close()
         except Exception as ex:
             self.logger.error("Exception:", exc_info=True)
-
+            
+""" to test """
 def main():
     w = Writer("./", logging.DEBUG)
     w.write("test.txt", "this is test")

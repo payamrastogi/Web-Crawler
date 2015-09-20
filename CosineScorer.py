@@ -11,17 +11,17 @@ from Indexer import Indexer
 
 """ 
 To Calculate the cosine score for a document(html page) 
-Modification to orginal Cosine Similarity Score 
-instead of using  (|corpus| / df(t,q)), where |corpus| is the total number of documents 
+Modification to original Cosine Similarity Score 
+instead of using  (|Corpus| / df(t,q)), where |Corpus| is the total number of documents 
 and df(t,q) is the number of documents in which term t appears, we have used (total_frequency/frequency_of_term)
-where total_frequency is the total number of words appear in wikipedia (english) pages and frequency_of_term is 
+where total_frequency is the total number of words appear in Wikipedia (English) pages and frequency_of_term is 
 the frequency of term in those pages
 total_frequency is 1229245740
 """
 class CosineScorer(object):
 
     """
-        @params word_dic A dictionary containing words and their normaized frequency
+        @params word_dic A dictionary containing words and their normalized frequency
         @params query Search query
     """
     def __init__(self, word_dict, query, log_level):
