@@ -5,9 +5,15 @@ from Logger import Logger
 from urlparse import urlparse
 from URLValidator import runtime_igonre_host
 
+""" To fetch urls """
+
 class Fetcher(object):
     def __init__(self, log_level):
         self.logger = Logger.get_logger("Fetcher", log_level)
+
+    """
+        Return response else return None  
+    """
 
     def fetch(self, url):
         try:
@@ -31,14 +37,18 @@ class Fetcher(object):
                 self.logger.debug("Useragent is not allowed to fetch the url: " + url)
                 return None
         except:
-            self.logger.error("Unexpected error occurred")
+            self.logger.error("unexpected error occurred")
+
+    """
+        check if user-agent is allowed or not
+        return true if user-agent is allowed else return false
+    """
 
     def __can_fetch(self, url):
         try:
             base_url = self.__get_base_url(url)
             if base_url:
                 rp = robotparser.RobotFileParser()
-                #print base_url
                 rp.set_url(base_url + "robots.txt")
                 rp.read()
                 return rp.can_fetch("*", url)
@@ -48,6 +58,10 @@ class Fetcher(object):
             self.logger.error("invalid url")
             return False
 
+    """
+        Return base_url i.e http://<hostname>/<path> else return None
+        parameters are omitted from the url
+    """
     def __get_base_url(self, url):
         try:
             parsed_uri = urlparse(url)
@@ -56,7 +70,8 @@ class Fetcher(object):
         except:
             self.logger.error("cannot parse url: " + url)
             return None
-
+            
+""" to test Fecther """
 def main():
     fetcher = Fetcher(logging.DEBUG)
     url = "http://www.animalplanet.com/pets/dogs/"

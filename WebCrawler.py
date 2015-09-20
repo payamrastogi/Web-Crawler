@@ -68,7 +68,6 @@ class WebCrawler(object):
             self.logger.error("Exception:", exc_info=True)
             
             
-
     def crawl(self):
         results = self.__get_google_results()
         self.__seed(results)
