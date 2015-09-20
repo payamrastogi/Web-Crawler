@@ -11,4 +11,4 @@ class URL(object):
         return
     """ to comapre priorities of two different URL object"""
     def __cmp__(self, other):
-        return cmp(self.priority, other.priority)
+        return cmp(other.priority, self.priority)

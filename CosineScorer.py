@@ -31,7 +31,10 @@ class CosineScorer(object):
         self.searchTerms = re.findall("\w+", query.lower())
         pairs = collections.Counter(self.searchTerms)
         for term in self.searchTerms:
-            self.tfidf_query[term] = (1 + log(pairs[term])) * self.word_dict[term]
+            if term in pairs.keys() and term in self.word_dict.keys():
+                self.tfidf_query[term] = (1 + log(pairs[term])) * self.word_dict[term]
+            else:
+                self.tfidf_query[term] = 0
         self.logger = Logger.get_logger("CosineScorer", log_level)
 
     """
@@ -39,19 +42,21 @@ class CosineScorer(object):
     """
     def get_score(self, text, url):
         scores = 0.0
+        if text is None:
+            return scores
         tfidf_document = {}
         terms = re.findall("\w+", text.lower())
         pairs = collections.Counter(terms)
 
         magnitude = 0.0
         for term in self.searchTerms:
-            if pairs[term] == 0:
-                pairs[term] = 1
-            tfidf_document[term] = (1 + log(pairs[term])) * self.word_dict[term]
-            scores = scores + self.tfidf_query[term] * tfidf_document[term]
-            magnitude = magnitude + pow(tfidf_document[term],2)
+            if term in pairs.keys() and term in self.word_dict.keys():
+                tfidf_document[term] = (1 + log(pairs[term])) * self.word_dict[term]
+                scores = scores + self.tfidf_query[term] * tfidf_document[term]
+                magnitude = magnitude + pow(tfidf_document[term],2)
         #Normalize scores
-        scores = scores/sqrt(magnitude)
+        if magnitude != 0:
+            scores = scores/sqrt(magnitude)
         return scores
 
 """ to test CosineScorer """
@@ -59,8 +64,8 @@ def main():
     start = time.time()
     indexer = Indexer(logging.DEBUG)
     word_dict = indexer.get_normalized_fequency()
-    cosine = CosineScorer(word_dict, "the cat and the dog", logging.DEBUG)
-    score = cosine.get_score("the cat and the dog are best friends", "http://www.google.com")
+    cosine = CosineScorer(word_dict, "the cat and the dog jkhgdh", logging.DEBUG)
+    score = cosine.get_score("httpwwwvimncompressnickseriessam uSam jkhgdh amp cat", "http://www.google.com")
     print score
     print str(time.time() - start) + " seconds"
 

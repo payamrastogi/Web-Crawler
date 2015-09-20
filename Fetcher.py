@@ -3,6 +3,7 @@ import logging
 import robotparser
 from Logger import Logger
 from urlparse import urlparse
+from URLValidator import runtime_igonre_host
 
 """ To fetch urls """
 
@@ -24,9 +25,16 @@ class Fetcher(object):
                     return None
                 else:
                     self.logger.debug("Response status code: 200")
-                    return response.content
+                    if response.headers['content-type'].startswith("text/html"):
+                        return response.content
+                    else:
+                        self.logger.debug("Invalid Content from the url: " + url)
+                        return None
             else:
-                self.logger.debug("useragent is not allowed to fetch the url: " + url)
+                parsed = urlparse(url)
+                if parsed is not None and parsed.hostname is not None:
+                    runtime_igonre_host.add(parsed.hostname)
+                self.logger.debug("Useragent is not allowed to fetch the url: " + url)
                 return None
         except:
             self.logger.error("unexpected error occurred")
