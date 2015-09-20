@@ -5,4 +5,4 @@ class URL(object):
         return
 
     def __cmp__(self, other):
-        return cmp(self.priority, other.priority)
+        return cmp(other.priority, self.priority)

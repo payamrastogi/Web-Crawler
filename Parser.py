@@ -5,6 +5,10 @@ import logging
 from Fetcher import Fetcher
 from Logger import Logger
 from BeautifulSoup import BeautifulSoup
+import urlparse
+import unicodedata
+from urllib import unquote
+from Link import Link
 
 class Parser(object):
     def __init__(self, query, log_level):
@@ -36,10 +40,27 @@ class Parser(object):
         if text is not None:
             soup = BeautifulSoup(text)
             for tag in soup.findAll('a', href=True):
-                #print(tag['href'])
-                tag['href'] = urlparse.urljoin(url, tag['href']).encode('utf-8')
-                links.append(tag['href'])
+                tag['href'] = self._clean(urlparse.urljoin(self._clean(url), self._clean(tag['href'])))
+                if tag['href'] and "javascript" not in tag['href'].lower():
+                    try :
+                        extra_info = self._alpha_num_str(self._clean(tag['href']) + ' ' + str(self._clean(tag.contents)))
+                    except:
+                       extra_info = self._clean(tag['href'])
+                    links.append(Link(self._clean(tag['href']),extra_info))
         return links
+
+    def _clean(self, string):
+        try:
+            string = unicode(unquote(string), 'utf-8', 'replace')
+            return unicodedata.normalize('NFC', string).encode('utf-8')
+        except:
+            return string
+
+    def _alpha_num_str(self,string):
+        try :
+            return ''.join(e for e in string if e.isalnum() or e == ' ')
+        except:
+            return string
 
 def main():
     url = "http://www.sciencedirect.com/"
