@@ -25,7 +25,7 @@ class Searcher(object):
             else:
                 result = json.loads(response.content.decode('utf-8'))
                 if result.has_key("responseData") and result["responseData"].has_key("results"):
-                    return result
+                    return result["responseData"].get("results")
                 else :
                     self.logger.error("responseData or results key not found")
                     return None

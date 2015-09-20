@@ -28,9 +28,11 @@ class CosineScorer(object):
         tfidf_document = {}
         terms = re.findall("\w+", text.lower())
         pairs = collections.Counter(terms)
-        print pairs["cat"]
+
         magnitude = 0.0
         for term in self.searchTerms:
+            if pairs[term] == 0:
+                pairs[term] = 1
             tfidf_document[term] = (1 + log(pairs[term])) * self.word_dict[term]
             scores = scores + self.tfidf_query[term] * tfidf_document[term]
             magnitude = magnitude + pow(tfidf_document[term],2)

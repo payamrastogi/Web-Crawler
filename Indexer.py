@@ -13,7 +13,8 @@ class Indexer(object):
         self.logger = Logger.get_logger("Indexer", log_level)
 
     def get_normalized_fequency(self):
-        print "initializing word dictionary..."
+        print "Initializing word dictionary..."
+        start = time.time()
         try:
             index = {}
             f = open(file_path, "r")
@@ -21,10 +22,8 @@ class Indexer(object):
                 for line in f:
                     i = line.split("\t")
                     index[i[0]] = log(total_words/int(i[1]))
-                #pickle.dump(index, open("./wordfreq.pql", "wb"))
+                print "Initialized in " + str(time.time()-start) +" seconds."
                 return index
-            else:
-                print "error"
         except Exception:
             self.logger.error("Exception:", exc_info=True)
             return None
