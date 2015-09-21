@@ -59,7 +59,7 @@ def is_valid_extention(url):
 def is_valid_host(url):
     IGNORED_HOSTS = [
         'www.youtube.com', 'www.dailymotion.com', 'www.netflix.com', 'www.yelp.com', 'www.grubhub.com',
-        'www.mediawiki.org', 'www.twitter.com' , 'www.tv.com'
+        'www.mediawiki.org', 'www.twitter.com' , 'www.tv.com', 'www.facebook.com',
     ]
     parsed = urlparse(url)
     if parsed is None or parsed.hostname is None:

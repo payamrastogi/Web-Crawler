@@ -50,7 +50,8 @@ class Parser(object):
                     try :
                         extra_info = self._alpha_num_str(self._clean(tag['href']) + ' ' + str(self._clean(tag.contents)))
                     except:
-                       extra_info = self._clean(tag['href'])
+                       extra_info = self._alpha_num_str(self._clean(tag['href']))
+
                     links.append(Link(self._clean(tag['href']),extra_info))
         return links
 
@@ -65,7 +66,7 @@ class Parser(object):
 
     def _alpha_num_str(self,string):
         try :
-            return ''.join(e for e in string if e.isalnum() or e == ' ')
+            return re.sub('[^a-zA-Z0-9\n ]', ' ', string)
         except:
             return string
 
