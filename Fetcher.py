@@ -6,12 +6,18 @@ from urlparse import urlparse
 from URLValidator import runtime_igonre_host
 import time
 
+""" To fetch urls """
+
 class Fetcher(object):
     def __init__(self, log_level):
         self.logger = Logger.get_logger("Fetcher", log_level)
         self.total_request = 0
         self.failed_request = 0
         self.robot_fail_request = 0
+
+    """
+        Return response else return None  
+    """
 
     def fetch(self, url):
         self.total_request += 1;
@@ -47,6 +53,11 @@ class Fetcher(object):
         except:
             self.logger.error("Unexpected error occurred")
 
+    """
+        check if user-agent is allowed or not
+        return true if user-agent is allowed else return false
+    """
+
     def __can_fetch(self, url):
         try:
             base_url = self.__get_base_url(url)
@@ -62,6 +73,10 @@ class Fetcher(object):
             self.logger.error("invalid url")
             return False
 
+    """
+        Return base_url i.e http://<hostname>/<path> else return None
+        parameters are omitted from the url
+    """
     def __get_base_url(self, url):
         try:
             parsed_uri = urlparse(url)
@@ -76,10 +91,12 @@ class Fetcher(object):
         logfile.write(line+'\n')
         logfile.close()
 
+            
+""" to test Fecther """
 def main():
     fetcher = Fetcher(logging.DEBUG)
-    url = "http://www.goole.com/"
-    print fetcher.fetch(url)
+    url = "http://www.animalplanet.com/pets/dogs/"
+    #print fetcher.fetch(url)
 
 if __name__ == "__main__":
     main()

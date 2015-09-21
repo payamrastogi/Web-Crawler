@@ -1,5 +1,8 @@
 import logging
 
+"""
+Used for logging, default log file path is ./log/webcrawler.log
+"""
 class Logger(object):
     @staticmethod
     def get_logger(class_name, log_level):
@@ -11,6 +14,7 @@ class Logger(object):
         logger.setLevel(log_level)
         return logger
 
+""" for testing """
 def main():
     l = Logger.get_logger("Logger", logging.DEBUG)
     l.debug("test")
