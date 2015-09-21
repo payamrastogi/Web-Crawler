@@ -50,7 +50,7 @@ def main():
     indexer = Indexer(logging.DEBUG)
     word_dict = indexer.get_normalized_fequency()
     cosine = CosineScorer(word_dict, "the cat and the dog jkhgdh", logging.DEBUG)
-    score = cosine.get_score("httpwwwvimncompressnickseriessam uSam jkhgdh amp cat", "http://www.google.com")
+    score = cosine.get_score("httpwwwvimncompressnickseriessam uSam jkhgdh ampcat", "http://www.google.com")
     print score
     print str(time.time() - start) + " seconds"
 

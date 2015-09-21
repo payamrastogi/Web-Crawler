@@ -23,8 +23,10 @@ class Writer(object):
             f = open(dir+"/index.html", 'w')
             f.write(str(text))
             f.close()
+            return f.name
         except Exception as ex:
             self.logger.error("Exception:", exc_info=True)
+        return None
 
 def main():
     w = Writer("./", logging.DEBUG)
