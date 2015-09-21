@@ -16,8 +16,13 @@ from sys import maxint
 from Logger import Logger
 import thread
 
-
+""" 
+    Main file
+    user will be asked to provide search query
+    and number of pages to be downloaded 
+"""
 class WebCrawler(object):
+
 
     def __init__(self):
         indexer = Indexer(logging.DEBUG)
@@ -35,6 +40,7 @@ class WebCrawler(object):
         self.saved_content = 0.0
         self.rank = 1
 
+    """ fetch top 10 results from google """
     def __get_google_results(self):
         print "Getting top 10 results from Google"
         search_start = time.time()
@@ -43,6 +49,7 @@ class WebCrawler(object):
         print "Results fetched in " + str(time.time()-search_start)+" seconds"
         return results
 
+    """ creates priority queue and add urls (fetched from google) """
     def __seed(self, results):
         for result in results:
             if result["unescapedUrl"] is not None:
@@ -54,6 +61,7 @@ class WebCrawler(object):
             else:
                 self.logger.debug("url is None")
 
+    """ process priority queue """
     def __process_q(self):
         process_start = time.time()
         try:
@@ -86,12 +94,15 @@ class WebCrawler(object):
         except:
             #print "processed in " + str(time.time()-process_start)+ " seconds."
             self.logger.error("Exception:", exc_info=True)
-            
+
+
+    """ writes result to log """
     def write_to_result_log(self, line):
         logfile = open('result.log', 'a')
         logfile.write(line+'\n')
         logfile.close()
 
+    """ writes discarded url to spam_url.log"""
     def discared_url_log(self, line):
         logfile = open('spam_url.log', 'a')
         logfile.write(line+'\n')
