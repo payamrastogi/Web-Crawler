@@ -1,6 +1,7 @@
 import requests
 import logging
 import robotparser
+import urllib2
 from Logger import Logger
 from urlparse import urlparse
 from URLValidator import runtime_igonre_host
@@ -18,15 +19,16 @@ class Fetcher(object):
     def fetch(self, url):
         try:
             if self.__can_fetch(url):
-                headers = {"user-agent": "webcrawler", "contact-us":"pr1228@nyu.edu"}
-                response = requests.get(url)
-                if response.status_code != requests.codes.ok:
-                    self.logger.debug("Response status code is not 200")
+                requests = urllib2.Request(url)
+                requests.add_header("user-agent", "webcrawler")
+                requests.add_header("contact-us", "pr1228@nyu.edu")
+                response = urllib2.urlopen(requests)
+                if response.getcode() != 200:
+                    self.logger.debug("Response status code is not 200 for " + url)
                     return None
                 else:
-                    self.logger.debug("Response status code: 200")
-                    if response.headers['content-type'].startswith("text/html"):
-                        return response.content
+                    if response.info().getheader("Content-Type").startswith("text/html"):
+                        return response.read()
                     else:
                         self.logger.debug("Invalid Content from the url: " + url)
                         return None
@@ -75,7 +77,7 @@ class Fetcher(object):
 def main():
     fetcher = Fetcher(logging.DEBUG)
     url = "http://www.animalplanet.com/pets/dogs/"
-    #print fetcher.fetch(url)
+    print fetcher.fetch(url)
 
 if __name__ == "__main__":
     main()

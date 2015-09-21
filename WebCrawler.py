@@ -2,6 +2,7 @@ import Queue as Q
 import logging
 import time
 import urllib
+import thread
 from Searcher import Searcher
 from Fetcher import Fetcher
 from Parser import Parser
@@ -13,6 +14,8 @@ from CosineScorer import CosineScorer
 from Indexer import Indexer
 from sys import maxint
 from Logger import Logger
+import thread
+
 
 class WebCrawler(object):
 
@@ -53,7 +56,7 @@ class WebCrawler(object):
             if is_valid_host(url.url):
                 text = self.fetcher.fetch(url.url)
                 if (text is not None) and (not is_duplicate_content(text)):
-                    print "processing " + url.url
+                    self.logger.debug("processing " + url.url)
                     score = self.cosine.get_score(text, url.url)
                     self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
                     #file_writer.write(url.url, text)
@@ -62,6 +65,7 @@ class WebCrawler(object):
                         if is_valid_url(link.url):
                             link_score = self.cosine.get_score(link.extra_info, url.url)
                             self.priority_queue.put(URL(score+link_score, link.url))
+                    self.logger.debug("processed in " + str(time.time()-process_start)+ " seconds.")
                     print "processed in " + str(time.time()-process_start)+ " seconds."
         except:
             #print "processed in " + str(time.time()-process_start)+ " seconds."
