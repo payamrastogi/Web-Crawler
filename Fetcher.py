@@ -25,20 +25,31 @@ class Fetcher(object):
         request_log_row = url+" Time: " + str(time.asctime(time.localtime(time.time())))
         try:
             if self.__can_fetch(url):
-                headers = {"user-agent": "webcrawler", "contact-us":"pr1228@nyu.edu"}
-                response = requests.get(url)
-                request_log_row += " Code: " + str(response.status_code)
-                if response.status_code != requests.codes.ok:
+                #print "can fetch"
+                #headers = {"user-agent": "webcrawler", "contact-us":"pr1228@nyu.edu"}
+                requests = urllib2.Request(url)
+                requests.add_header("user-agent", "webcrawler")
+                requests.add_header("contact-us", "pr1228@nyu.edu")
+                #response = requests.get(url)
+                response = urllib2.urlopen(requests)
+                #print str(response.getcode())
+                #print str(response.info().getheader("content-length"))
+                request_log_row += " Code: " + str(response.getcode())
+                if response.getcode() != 200:
                     self.failed_request += 1
                     self.logger.debug("Response status code is not 200")
                     self.write_to_request_log(request_log_row)
                     return None
                 else:
-                    request_log_row += " Size: " + str(int(response.headers['content-length'])/1000.0) + " KB Content-Type : " + response.headers['content-type']
+                    #request_log_row += " Size: " + str(int(response.headers['content-length'])/1000.0) + " KB Content-Type : " + response.headers['content-type']
+                    request_log_row += " Size: " + str(int(response.info().getheader("content-length"))/1000.0) + " KB Content-Type : " + response.info().getheader("Content-Type")
+                    print request_log_row
                     self.write_to_request_log(request_log_row)
                     self.logger.debug("Response status code: 200")
-                    if response.headers['content-type'].startswith("text/html"):
-                        return response.content
+                    #if response.headers['content-type'].startswith("text/html"):
+                    if response.info().getheader("Content-Type").startswith("text/html"):
+                        #return response.content
+                        return response.read()
                     else:
                         self.logger.debug("Invalid Content from the url: " + url)
                         return None
@@ -67,6 +78,7 @@ class Fetcher(object):
                 #print base_url
                 rp.set_url(base_url + "robots.txt")
                 rp.read()
+                #print rp.can_fetch("*", url)
                 return rp.can_fetch("*", url)
             else:
                 return False
@@ -96,8 +108,8 @@ class Fetcher(object):
 """ to test Fecther """
 def main():
     fetcher = Fetcher(logging.DEBUG)
-    url = "http://www.animalplanet.com/pets/dogs/"
-    print fetcher.fetch(url)
+    url = "http://www.coddicted.com"
+    fetcher.fetch(url)
 
 if __name__ == "__main__":
     main()

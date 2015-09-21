@@ -9,6 +9,7 @@ import urlparse
 import unicodedata
 from urllib import unquote
 from Link import Link
+from LinkExtractor import LinkExtractor
 
 """ Parse the HTML text """
 class Parser(object):
@@ -43,16 +44,17 @@ class Parser(object):
     def get_links(self, url, text):
         links = []
         if text is not None:
-            soup = BeautifulSoup(text)
-            for tag in soup.findAll('a', href=True):
-                tag['href'] = self._clean(urlparse.urljoin(self._clean(url), self._clean(tag['href'])))
-                if tag['href'] and "javascript" not in tag['href'].lower():
+            #soup = BeautifulSoup(text)
+            linkExtractor = LinkExtractor()
+            linkExtractor.feed(text)
+            for tag in linkExtractor.get_tags():
+                tag.href = self._clean(urlparse.urljoin(self._clean(url), self._clean(tag.href)))
+                if tag.href and "javascript" not in tag.href.lower():
                     try :
-                        extra_info = self._alpha_num_str(self._clean(tag['href']) + ' ' + str(self._clean(tag.contents)))
+                        extra_info = self._alpha_num_str(self._clean(tag.href) + ' ' + str(self._clean(tag.content)))
                     except:
-                       extra_info = self._alpha_num_str(self._clean(tag['href']))
-
-                    links.append(Link(self._clean(tag['href']),extra_info))
+                       extra_info = self._alpha_num_str(self._clean(tag.href))
+                    links.append(Link(self._clean(tag.href),extra_info))
         return links
 
     """ To test Parser """
@@ -71,11 +73,20 @@ class Parser(object):
             return string
 
 def main():
-    url = "http://www.sciencedirect.com/"
-    parser = Parser("food", logging.DEBUG)
+    url = "http://www.coddicted.com"
+    parser = Parser("java", logging.DEBUG)
     fetcher = Fetcher(logging.DEBUG)
     text = fetcher.fetch(url)
-    parser.parse(url,text)
+    print text
+    for link in parser.get_links(url, text):
+        print link.url
+    #linkExtractor = LinkExtractor()
+    #linkExtractor.feed("<p>hello</p><p><a class='link' href='#main'>tag soup</a><a href='#index'>welcome abcd efgh</a></p>")
+    #tags =  linkExtractor.get_tags()
+    #for tag in tags:
+    #    print tag.href
+    #    print tag.content
+    #parser.parse(url,text)
 
 if __name__ == "__main__":
     main()
