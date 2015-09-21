@@ -1,6 +1,7 @@
 import requests
 import logging
 import robotparser
+import urllib2
 from Logger import Logger
 from urlparse import urlparse
 from URLValidator import runtime_igonre_host
@@ -96,7 +97,7 @@ class Fetcher(object):
 def main():
     fetcher = Fetcher(logging.DEBUG)
     url = "http://www.animalplanet.com/pets/dogs/"
-    #print fetcher.fetch(url)
+    print fetcher.fetch(url)
 
 if __name__ == "__main__":
     main()
