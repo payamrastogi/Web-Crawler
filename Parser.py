@@ -43,18 +43,22 @@ class Parser(object):
     """" Return the links in the text """
     def get_links(self, url, text):
         links = []
-        if text is not None:
-            #soup = BeautifulSoup(text)
-            linkExtractor = LinkExtractor()
-            linkExtractor.feed(text)
-            for tag in linkExtractor.get_tags():
-                tag.href = self._clean(urlparse.urljoin(self._clean(url), self._clean(tag.href)))
-                if tag.href and "javascript" not in tag.href.lower():
-                    try :
-                        extra_info = self._alpha_num_str(self._clean(tag.href) + ' ' + str(self._clean(tag.content)))
-                    except:
-                       extra_info = self._alpha_num_str(self._clean(tag.href))
-                    links.append(Link(self._clean(tag.href),extra_info))
+        try:
+            if text is not None:
+                #soup = BeautifulSoup(text)
+                linkExtractor = LinkExtractor()
+                linkExtractor.feed(text)
+                for tag in linkExtractor.get_tags():
+                    original_href = tag.href
+                    tag.href = self._clean(urlparse.urljoin(self._clean(url), self._clean(tag.href)))
+                    if tag.href and "javascript" not in tag.href.lower():
+                        try :
+                            extra_info = self._alpha_num_str(self._clean(original_href) + ' ' + str(self._clean(tag.content)))
+                        except:
+                            extra_info = self._alpha_num_str(self._clean(original_href))
+                        links.append(Link(self._clean(tag.href),extra_info))
+        except:
+            print "Content Parsing Error"
         return links
 
     """ To test Parser """
@@ -80,13 +84,6 @@ def main():
     print text
     for link in parser.get_links(url, text):
         print link.url
-    #linkExtractor = LinkExtractor()
-    #linkExtractor.feed("<p>hello</p><p><a class='link' href='#main'>tag soup</a><a href='#index'>welcome abcd efgh</a></p>")
-    #tags =  linkExtractor.get_tags()
-    #for tag in tags:
-    #    print tag.href
-    #    print tag.content
-    #parser.parse(url,text)
 
 if __name__ == "__main__":
     main()
