@@ -40,24 +40,43 @@ class CosineScorer(object):
     """
         Return the document score
     """
-    def get_score(self, text, url):
+    def get_score(self, text):
         scores = 0.0
         if text is None:
             return scores
         tfidf_document = {}
         terms = re.findall("\w+", text.lower())
+        #pairs_start = time.time()
         pairs = collections.Counter(terms)
-
+        #print "pairs_counted in: " + str(time.time()-pairs_start)+ " seconds."
         magnitude = 0.0
+        for_cosine_start = time.time()
         for term in self.searchTerms:
-            if term in pairs.keys() and term in self.word_dict.keys():
+            #dict_start = time.time()
+            if term in pairs and term in self.word_dict:
+                #print "dict compared in: " + str(time.time()-dict_start)+ " seconds."
+                #cal_start = time.time()
                 tfidf_document[term] = (1 + log(pairs[term])) * self.word_dict[term]
                 scores = scores + self.tfidf_query[term] * tfidf_document[term]
                 magnitude = magnitude + pow(tfidf_document[term],2)
+                #print "calculated in: " + str(time.time()-cal_start)+ " seconds."
+        #print "for_cosine in: " + str(time.time()-for_cosine_start)+ " seconds."
         #Normalize scores
         if magnitude != 0:
             scores = scores/sqrt(magnitude)
         return scores
+
+    def get_link_score(self, text):
+        scores = 0.0
+        if text is None:
+            return scores
+        terms = re.findall("\w+", text.lower())
+        pairs = collections.Counter(terms)
+        for term in self.searchTerms:
+            if term in pairs:
+                scores = scores + pairs[term]
+        return scores
+
 
 """ to test CosineScorer """
 def main():

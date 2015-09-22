@@ -43,7 +43,7 @@ class Fetcher(object):
                 else:
                     #request_log_row += " Size: " + str(int(response.headers['content-length'])/1000.0) + " KB Content-Type : " + response.headers['content-type']
                     request_log_row += " Size: " + str(int(response.info().getheader("content-length"))/1000.0) + " KB Content-Type : " + response.info().getheader("Content-Type")
-                    print request_log_row
+                    #print request_log_row
                     self.write_to_request_log(request_log_row)
                     self.logger.debug("Response status code: 200")
                     #if response.headers['content-type'].startswith("text/html"):
