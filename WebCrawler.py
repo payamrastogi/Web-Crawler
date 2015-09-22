@@ -2,7 +2,6 @@ import Queue as Q
 import logging
 import time
 import urllib
-import thread
 from Searcher import Searcher
 from Fetcher import Fetcher
 from Parser import Parser
@@ -14,7 +13,6 @@ from CosineScorer import CosineScorer
 from Indexer import Indexer
 from sys import maxint
 from Logger import Logger
-import thread
 
 """ 
     Main file
@@ -68,43 +66,31 @@ class WebCrawler(object):
             url = self.priority_queue.get()
             if is_valid_host(url.url):
                 text = self.fetcher.fetch(url.url)
-                if (text is not None) and (not is_duplicate_content(text)):
+                if (text is not None) and (not is_duplicate_content(text, url.url)):
                     self.logger.debug("processing " + url.url)
                     score = self.cosine.get_score(text, url.url)
-                    self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
-                    self.saved_content += len(text)/1000
-                    file_path = self.file_writer.write(url.url, text)
-                    result_log_row = "Rank :"+ str(self.rank) +" URL :" + url.url + \
+                    if score != 0:
+                        self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
+                        self.saved_content += len(text)/1000
+                        file_path = self.file_writer.write(url.url, text)
+                        result_log_row = "Rank :"+ str(self.rank) +" URL :" + url.url + \
                                       " Score :" + str(url.priority) + \
                                       " Download Path :" + file_path
-                    self.write_to_result_log(result_log_row)
-                    self.rank += 1
-                    for link in self.parser.get_links(url.url, text):
-                        self.total_links_found += 1
-                        if is_valid_url(link.url):
-                            link_score = self.cosine.get_score(link.extra_info, url.url)
-                            self.priority_queue.put(URL(score+link_score, link.url))
-                        else:
-                            self.discared_url_log(url.url)
+                        self.write_to_result_log(result_log_row)
+                        self.rank += 1
+                        for link in self.parser.get_links(url.url, text):
+                            self.total_links_found += 1
+                            if is_valid_url(link.url):
+                                link_score = self.cosine.get_score(link.extra_info, url.url)
+                                self.priority_queue.put(URL(score+link_score, link.url))
                     print "processed in " + str(time.time()-process_start)+ " seconds."
-                else:
-                    self.discared_url_log(url.url)
-            else:
-                self.discared_url_log(url.url)
         except:
-            #print "processed in " + str(time.time()-process_start)+ " seconds."
             self.logger.error("Exception:", exc_info=True)
 
 
     """ writes result to log """
     def write_to_result_log(self, line):
         logfile = open('result.log', 'a')
-        logfile.write(line+'\n')
-        logfile.close()
-
-    """ writes discarded url to spam_url.log"""
-    def discared_url_log(self, line):
-        logfile = open('spam_url.log', 'a')
         logfile.write(line+'\n')
         logfile.close()
 
@@ -115,6 +101,7 @@ class WebCrawler(object):
             self.__process_q()
 
 def main():
+    total_start = time.time()
     webCrawler = WebCrawler()
     webCrawler.crawl()
 
@@ -122,7 +109,8 @@ def main():
                 "\n Total Request Made :" + str(webCrawler.fetcher.total_request) +\
                 "\n Total Request Failed :" + str(webCrawler.fetcher.failed_request + webCrawler.fetcher.robot_fail_request) +\
                 "\n Total Request Failed Due to Robot :" + str(webCrawler.fetcher.robot_fail_request) +\
-                "\n Saved Content Size :" + str(webCrawler.saved_content) + " KB"
+                "\n Saved Content Size :" + str(webCrawler.saved_content) + " KB" +\
+                "\n Total Time :"+ str(time.time()-total_start)+ " seconds."
     webCrawler.write_to_result_log(stat_info)
 
 if __name__ == "__main__":
