@@ -2,7 +2,6 @@ import Queue as Q
 import logging
 import time
 import urllib
-import thread
 from Searcher import Searcher
 from Fetcher import Fetcher
 from Parser import Parser
@@ -14,7 +13,6 @@ from CosineScorer import CosineScorer
 from Indexer import Indexer
 from sys import maxint
 from Logger import Logger
-import thread
 
 """ 
     Main file
@@ -68,8 +66,9 @@ class WebCrawler(object):
             url = self.priority_queue.get()
             if is_valid_host(url.url):
                 text = self.fetcher.fetch(url.url)
-                if (text is not None) and (not is_duplicate_content(text)):
+                if (text is not None) and (not is_duplicate_content(text, url.url)):
                     self.logger.debug("processing " + url.url)
+<<<<<<< HEAD
                     score_start = time.time()
                     score = self.cosine.get_score(text)
                     #print "scored_text in: " + str(time.time()-score_start)+ " seconds."
@@ -108,20 +107,31 @@ class WebCrawler(object):
                 discard_start2 = time.time()
                 self.discared_url_log(url.url)
                 #print "discard_logged in: " + str(time.time()-discard_start2)+ " seconds."
+=======
+                    score = self.cosine.get_score(text, url.url)
+                    if score != 0:
+                        self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
+                        self.saved_content += len(text)/1000
+                        file_path = self.file_writer.write(url.url, text)
+                        result_log_row = "Rank :"+ str(self.rank) +" URL :" + url.url + \
+                                      " Score :" + str(url.priority) + \
+                                      " Download Path :" + file_path
+                        self.write_to_result_log(result_log_row)
+                        self.rank += 1
+                        for link in self.parser.get_links(url.url, text):
+                            self.total_links_found += 1
+                            if is_valid_url(link.url):
+                                link_score = self.cosine.get_score(link.extra_info, url.url)
+                                self.priority_queue.put(URL(score+link_score, link.url))
+                    print "processed in " + str(time.time()-process_start)+ " seconds."
+>>>>>>> 8fb1ad0b0f2c420f66c30bcb291238751c9dfa8c
         except:
-            #print "processed in " + str(time.time()-process_start)+ " seconds."
             self.logger.error("Exception:", exc_info=True)
 
 
     """ writes result to log """
     def write_to_result_log(self, line):
         logfile = open('result.log', 'a')
-        logfile.write(line+'\n')
-        logfile.close()
-
-    """ writes discarded url to spam_url.log"""
-    def discared_url_log(self, line):
-        logfile = open('spam_url.log', 'a')
         logfile.write(line+'\n')
         logfile.close()
 

@@ -31,7 +31,7 @@ class CosineScorer(object):
         self.searchTerms = re.findall("\w+", query.lower())
         pairs = collections.Counter(self.searchTerms)
         for term in self.searchTerms:
-            if term in pairs.keys() and term in self.word_dict.keys():
+            if term in pairs and term in self.word_dict:
                 self.tfidf_query[term] = (1 + log(pairs[term])) * self.word_dict[term]
             else:
                 self.tfidf_query[term] = 0
@@ -52,10 +52,7 @@ class CosineScorer(object):
         magnitude = 0.0
         for_cosine_start = time.time()
         for term in self.searchTerms:
-            #dict_start = time.time()
             if term in pairs and term in self.word_dict:
-                #print "dict compared in: " + str(time.time()-dict_start)+ " seconds."
-                #cal_start = time.time()
                 tfidf_document[term] = (1 + log(pairs[term])) * self.word_dict[term]
                 scores = scores + self.tfidf_query[term] * tfidf_document[term]
                 magnitude = magnitude + pow(tfidf_document[term],2)

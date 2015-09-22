@@ -1,11 +1,13 @@
-import requests
 import logging
 import robotparser
 import urllib2
+import time
+import socket
+import ssl
 from Logger import Logger
 from urlparse import urlparse
 from URLValidator import runtime_igonre_host
-import time
+
 
 """ To fetch urls """
 
@@ -25,45 +27,105 @@ class Fetcher(object):
         request_log_row = url+" Time: " + str(time.asctime(time.localtime(time.time())))
         try:
             if self.__can_fetch(url):
-                #print "can fetch"
-                #headers = {"user-agent": "webcrawler", "contact-us":"pr1228@nyu.edu"}
                 requests = urllib2.Request(url)
                 requests.add_header("user-agent", "webcrawler")
                 requests.add_header("contact-us", "pr1228@nyu.edu")
-                #response = requests.get(url)
-                response = urllib2.urlopen(requests)
-                #print str(response.getcode())
-                #print str(response.info().getheader("content-length"))
+                requests.add_header("content-language", "en")
+                response = urllib2.urlopen(requests, timeout=3.0)
                 request_log_row += " Code: " + str(response.getcode())
-                if response.getcode() != 200:
-                    self.failed_request += 1
-                    self.logger.debug("Response status code is not 200")
-                    self.write_to_request_log(request_log_row)
-                    return None
-                else:
-                    #request_log_row += " Size: " + str(int(response.headers['content-length'])/1000.0) + " KB Content-Type : " + response.headers['content-type']
-                    request_log_row += " Size: " + str(int(response.info().getheader("content-length"))/1000.0) + " KB Content-Type : " + response.info().getheader("Content-Type")
-                    #print request_log_row
-                    self.write_to_request_log(request_log_row)
+                if response.getcode() == 200:
+                    request_log_row += " Size: " + str(int(response.info().getheader("content-length") or 0)/1000.0) + \
+                                       " KB Content-Type : " + response.info().getheader("Content-Type")
+                    print request_log_row
                     self.logger.debug("Response status code: 200")
-                    #if response.headers['content-type'].startswith("text/html"):
-                    if response.info().getheader("Content-Type").startswith("text/html"):
-                        #return response.content
+                    if int(response.info().getheader("content-length") or 0) == 0:
+                        self.robot_fail_request += 1
+                        parsed = urlparse(url)
+                        if parsed is not None and parsed.hostname is not None:
+                            runtime_igonre_host.add(parsed.hostname)
+                        print "No Content From URL"
+                        self.discared_url_log("No Content From URL : " + url)
+                        self.write_to_request_log(request_log_row)
+                        return None
+                    elif response.info().getheader("Content-Type").startswith("text/"):
+                        self.write_to_request_log(request_log_row)
                         return response.read()
                     else:
+                        print url + " -- Invalid Content from the url"
                         self.logger.debug("Invalid Content from the url: " + url)
+                        self.discared_url_log("Invalid Content: " + url)
+                        self.write_to_request_log(request_log_row)
                         return None
             else:
-                parsed = urlparse(url)
-                if parsed is not None and parsed.hostname is not None:
-                    runtime_igonre_host.add(parsed.hostname)
                 self.robot_fail_request += 1
                 request_log_row += " Useragent is not allowed to fetch the url"
                 self.logger.debug("Useragent is not allowed to fetch the url: " + url)
                 self.write_to_request_log(request_log_row)
+                self.discared_url_log("Useragent Not Allowed : " + url)
+                parsed = urlparse(url)
+                if parsed is not None and parsed.hostname is not None:
+                    runtime_igonre_host.add(parsed.hostname)
                 return None
+        except socket.timeout:
+            print url + " -- Timed out!"
+            self.failed_request += 1
+            self.discared_url_log("Timed out : " + url)
+            self.write_to_request_log(request_log_row + " -- Time Out")
+            try:
+                parsed = urlparse(url)
+                if parsed is not None and parsed.hostname is not None:
+                    runtime_igonre_host.add(parsed.hostname)
+            except:
+                return None
+            return None
+        except ssl.SSLError:
+            print url + " -- Timed out!"
+            self.failed_request += 1
+            self.discared_url_log("Timed out : " + url)
+            self.write_to_request_log(request_log_row + " -- Time Out")
+            try:
+                parsed = urlparse(url)
+                if parsed is not None and parsed.hostname is not None:
+                    runtime_igonre_host.add(parsed.hostname)
+            except:
+                return None
+            return None
+        except urllib2.HTTPError, err:
+            if err.code == 404:
+                print url + " -- Page not found!"
+                self.failed_request += 1
+                self.discared_url_log("Page not found : " + url)
+                self.write_to_request_log(request_log_row + " -- Page not found")
+                return None
+            elif err.code == 403:
+                print url + " -- Access denied!"
+                self.robot_fail_request += 1
+                self.discared_url_log("Access denied : " + url)
+                self.write_to_request_log(request_log_row + " -- Access denied")
+                try:
+                    parsed = urlparse(url)
+                    if parsed is not None and parsed.hostname is not None:
+                        runtime_igonre_host.add(parsed.hostname)
+                except:
+                    return None
+            elif err.code == 401:
+                print url + " -- Authentication Required!"
+                self.robot_fail_request += 1
+                self.discared_url_log("Authentication Required : " + url)
+                self.write_to_request_log(request_log_row + " -- Authentication Required")
+                try:
+                    parsed = urlparse(url)
+                    if parsed is not None and parsed.hostname is not None:
+                        runtime_igonre_host.add(parsed.hostname)
+                except:
+                    return None
         except:
+            self.failed_request += 1
+            self.logger.error("Exception:", exc_info=True)
             self.logger.error("Unexpected error occurred")
+            self.discared_url_log("Unexpected Error : " + url)
+            self.write_to_request_log(request_log_row + " -- Unexpected Error")
+            return None
 
     """
         check if user-agent is allowed or not
@@ -75,14 +137,13 @@ class Fetcher(object):
             base_url = self.__get_base_url(url)
             if base_url:
                 rp = robotparser.RobotFileParser()
-                #print base_url
                 rp.set_url(base_url + "robots.txt")
                 rp.read()
-                #print rp.can_fetch("*", url)
                 return rp.can_fetch("*", url)
             else:
                 return False
         except:
+            self.failed_request += 1
             self.logger.error("invalid url")
             return False
 
@@ -101,6 +162,12 @@ class Fetcher(object):
 
     def write_to_request_log(self, line):
         logfile = open('request.log', 'a')
+        logfile.write(line+'\n')
+        logfile.close()
+
+    """ writes discarded url to spam_url.log"""
+    def discared_url_log(self, line):
+        logfile = open('spam_url.log', 'a')
         logfile.write(line+'\n')
         logfile.close()
 
