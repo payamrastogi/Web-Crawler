@@ -61,53 +61,13 @@ class WebCrawler(object):
 
     """ process priority queue """
     def __process_q(self):
-        process_start = time.time()
+         process_start = time.time()
         try:
             url = self.priority_queue.get()
             if is_valid_host(url.url):
                 text = self.fetcher.fetch(url.url)
                 if (text is not None) and (not is_duplicate_content(text, url.url)):
                     self.logger.debug("processing " + url.url)
-<<<<<<< HEAD
-                    score_start = time.time()
-                    score = self.cosine.get_score(text)
-                    #print "scored_text in: " + str(time.time()-score_start)+ " seconds."
-                    self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
-                    self.saved_content += len(text)/1000
-                    content_start = time.time()
-                    file_path = self.file_writer.write(url.url, text)
-                    #print "content wrote in: " + str(time.time()-content_start)+ " seconds."
-                    result_log_row = "Rank :"+ str(self.rank) +" URL :" + url.url + \
-                                      " Score :" + str(url.priority) + \
-                                      " Download Path :" + file_path
-                    result_log_start = time.time()
-                    self.write_to_result_log(result_log_row)
-                    #print "result_logged in " + str(time.time()-result_log_start)+ " seconds."
-                    self.rank += 1
-                    links_start = time.time()
-                    links = self.parser.get_links(url.url, text)
-                    #print "links fetched in " + str(time.time()-links_start)+ " seconds."
-                    for link in links:
-                        self.total_links_found += 1
-                        if is_valid_url(link.url):
-                            socre_link_start = time.time()
-                            link_score = self.cosine.get_score(link.extra_info)
-                            #print "scored_link in: " + str(time.time()-socre_link_start)+ " seconds."
-                            self.priority_queue.put(URL(score+link_score, link.url))
-                        else:
-                            discard_start = time.time()
-                            self.discared_url_log(url.url)
-                            #print "discard_logged in: " + str(time.time()-discard_start)+ " seconds."
-                    print "processed in " + str(time.time()-process_start)+ " seconds."
-                else:
-                    discard_start1 = time.time()
-                    self.discared_url_log(url.url)
-                    #print "discard_logged in: " + str(time.time()-discard_start1)+ " seconds."
-            else:
-                discard_start2 = time.time()
-                self.discared_url_log(url.url)
-                #print "discard_logged in: " + str(time.time()-discard_start2)+ " seconds."
-=======
                     score = self.cosine.get_score(text, url.url)
                     if score != 0:
                         self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
@@ -124,7 +84,6 @@ class WebCrawler(object):
                                 link_score = self.cosine.get_score(link.extra_info, url.url)
                                 self.priority_queue.put(URL(score+link_score, link.url))
                     print "processed in " + str(time.time()-process_start)+ " seconds."
->>>>>>> 8fb1ad0b0f2c420f66c30bcb291238751c9dfa8c
         except:
             self.logger.error("Exception:", exc_info=True)
 
