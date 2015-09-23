@@ -1,11 +1,7 @@
 #### To-Do
-- posting list
+- replace robot-parser with "Nikita the spider" parser
 - multi-threading
-- priority queue based scores dict
-- test CosineScorer
-- hashing logic for documents
-- file writer
-- dict to maintain filename, hash-value, path
+
 
 #### components
  - robotparser - https://docs.python.org/2/library/robotparser.html

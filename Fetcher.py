@@ -31,7 +31,7 @@ class Fetcher(object):
                 requests.add_header("user-agent", "webcrawler")
                 requests.add_header("contact-us", "pr1228@nyu.edu")
                 requests.add_header("content-language", "en")
-                response = urllib2.urlopen(requests, timeout=3.0)
+                response = urllib2.urlopen(requests, timeout=5.0)
                 request_log_row += " Code: " + str(response.getcode())
                 if response.getcode() == 200:
                     request_log_row += " Size: " + str(int(response.info().getheader("content-length") or 0)/1000.0) + \
@@ -167,9 +167,10 @@ class Fetcher(object):
 
     """ writes discarded url to spam_url.log"""
     def discared_url_log(self, line):
-        logfile = open('spam_url.log', 'a')
-        logfile.write(line+'\n')
-        logfile.close()
+        pass
+        #logfile = open('spam_url.log', 'a')
+        #logfile.write(line+'\n')
+        #logfile.close()
 
             
 """ to test Fecther """

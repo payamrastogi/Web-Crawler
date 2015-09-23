@@ -40,7 +40,7 @@ class CosineScorer(object):
     """
         Return the document score
     """
-    def get_score(self, text):
+    def get_score(self, text, url):
         scores = 0.0
         if text is None:
             return scores

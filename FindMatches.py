@@ -29,6 +29,7 @@ def is_duplicate_content(txt, url):
         return False
 """ writes discarded url to spam_url.log"""
 def discared_url_log(line):
-    logfile = open('spam_url.log', 'a')
-    logfile.write(line+'\n')
-    logfile.close()
+    pass
+    #logfile = open('spam_url.log', 'a')
+    #logfile.write(line+'\n')
+    #logfile.close()
