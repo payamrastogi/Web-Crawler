@@ -77,13 +77,20 @@ class Parser(object):
             return string
 
 def main():
-    url = "http://www.coddicted.com"
-    parser = Parser("java", logging.DEBUG)
-    fetcher = Fetcher(logging.DEBUG)
-    text = fetcher.fetch(url)
-    print text
-    for link in parser.get_links(url, text):
-        print link.url
+    #url = "http://www.coddicted.com"
+    #parser = Parser("java", logging.DEBUG)
+    #fetcher = Fetcher(logging.DEBUG)
+    #text = fetcher.fetch(url)
+    #print text
+    #for link in parser.get_links(url, text):
+    #    print link.url
+    linkExtractor = LinkExtractor()
+    linkExtractor.feed("<p>hello</p><p><a class='link' href='#main'><img src='/xyz'/></a><a href='#index'>welcome abcd efgh</a></p>")
+    tags =  linkExtractor.get_tags()
+    for tag in tags:
+        print tag.href
+        print tag.content
+    #parser.parse(url,text)
 
 if __name__ == "__main__":
     main()

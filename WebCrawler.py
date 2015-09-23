@@ -72,10 +72,10 @@ class WebCrawler(object):
                     if score != 0:
                         self.logger.debug(url.url +" : "+str(url.priority)+"---"+ str(score))
                         self.saved_content += len(text)/1000
-                        file_path = self.file_writer.write(url.url, text)
+                        #file_path = self.file_writer.write(url.url, text)
                         result_log_row = "Rank :"+ str(self.rank) +" URL :" + url.url + \
-                                      " Score :" + str(url.priority) + \
-                                      " Download Path :" + file_path
+                                      " Score :" + str(url.priority) # + \
+                                      #" Download Path :" + file_path
                         self.write_to_result_log(result_log_row)
                         self.rank += 1
                         for link in self.parser.get_links(url.url, text):
