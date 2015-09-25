@@ -1,5 +1,5 @@
 #### To-Do
-- replace robot-parser with "Nikita the spider" parser
+- replace robot-parser with "Nikita the spider" parser (robotexclusionrule parser)
 - multi-threading
 
 
